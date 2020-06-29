@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="./static/style.css">
+  <title>Login</title>
+</head>
+<body>
+  <div class="fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="py-2" href="#" aria-label="Product">
+        <img src="https://icons.iconarchive.com/icons/tatice/operating-systems/256/Linux-icon.png" alt="Linux icon" width="24" height="24">
+      </a>
+      
+      <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" id="tutor-tab" data-toggle="tab" href="#tutor" role="tab" aria-controls="tutor" aria-selected="true">Tutorial</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="documentation-tab" data-toggle="tab" href="#documentation" role="tab" aria-controls="documentation" aria-selected="false">Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="support-tab" data-toggle="tab" href="#support" role="tab" aria-controls="support" aria-selected="false">Support</a>
+        </li>
+      </ul>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:center;">
+	      <button type="button" class="btn btn-sm" onclick="window.location.href='{{ url_for('bind') }}'"><i class="fa fa-plus" aria-hidden="true"></i></button>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container">
+    
+
+    <form>
+      <div>
+        <h1>Monitor</h1><br>
+      </div>
+
+      <div class="input-group mb-3">
+        <!--<input type="text" id="hostname" placeholder="Enter your host">-->
+        <select class="custom-select" id="hostname">
+          <option selected>Server...</option>
+          <option value="1">192.168.126.2</option>
+          <option value="2">ubuntu-s-1vcpu-1gb-sfo2-01</option>
+        </select>
+      </div>
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="inputGroup-sizing-default">
+      </div>
+      
+      <div class="input-group mb-3">
+        <input type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="checkbox-container">
+          <input type="checkbox" id="remember">
+          <label for="remember">Remember me</label>
+      </div>
+
+      <button class="btn">Log In</button>
+    </form>
+
+    <div class="features">
+      <div class="feature">
+        <i class="fas fa-coffee"></i>
+        <h3>Easy</h3>
+        <p>Drop-in installation.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-grin-alt"></i>
+        <h3>Simple</h3>
+        <p>A minimalist, beautiful dashboard.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-universal-access"></i>
+        <h3>universal</h3>
+        <p>Support multiple Linux platforms.</p>
+      </div>
+    </div>
+</div>
+</body>
+</html>
