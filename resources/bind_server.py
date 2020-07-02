@@ -3,6 +3,12 @@ from models.bind_server import BindServer
 
 class BindServerInfo(Resource):
     parser = reqparse.RequestParser()
+    parser.add_argument('register_datetime',
+                        type=str,
+                        required=True,
+                        help="This field cannot be blank."
+                        )
+
     parser.add_argument('first_name',
                         type=str,
                         required=True,
@@ -66,6 +72,7 @@ class BindServerInfo(Resource):
 
     def post(self):
         data = BindServerInfo.parser.parse_args()
+        print(data)
 
         if BindServer.find_by_host(data['first_name'], data['last_name'], data['host'], data['host_user']):
             return {"message": "The host with that user already exists"}, 400
