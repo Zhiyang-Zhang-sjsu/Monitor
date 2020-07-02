@@ -9,9 +9,25 @@
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'>
   <link rel="stylesheet" href="./static/bind_style.css">
+
+  <script language="JavaScript">
+    var initializationTime = (new Date()).getTime();
+    function showTime() {
+      var now = new Date();
+      var year = now.getFullYear();
+      var month = now.getMonth();
+      var day = now.getDate();
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+      document.getElementById('register-datetime').value = (month + 1) + '/' + day + '/' + year + ' ' + hours + ":" + minutes + ":" + seconds + "";
+      var timeID = setTimeout(showTime, 1000);
+    }
+  </script>
+
 </head>
 
-<body>
+<body onload="showTime()">
   <!-- partial:index.partial.html -->
   <div class="container">
 	  <form class="well form-horizontal" action=" {{ url_for('bind_server') }}" method="post"  id="contact_form">
@@ -216,6 +232,17 @@
             </div>
           </div>
         </div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label">Time</label>  
+	  <div class="col-md-4 inputGroupContainer">
+	    <div class="input-group">
+	      <span class="input-group-addon"><i class="glyphicon glyphicon-eye-open"></i></span>
+	      <input type="text" name="register_datetime" id='register-datetime' class="form-control">
+	    </div>
+	  </div>
+	</div>
 
         <!-- Success message -->
         <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
