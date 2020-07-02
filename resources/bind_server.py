@@ -72,7 +72,6 @@ class BindServerInfo(Resource):
 
     def post(self):
         data = BindServerInfo.parser.parse_args()
-        print(data)
 
         if BindServer.find_by_host(data['first_name'], data['last_name'], data['host'], data['host_user']):
             return {"message": "The host with that user already exists"}, 400
