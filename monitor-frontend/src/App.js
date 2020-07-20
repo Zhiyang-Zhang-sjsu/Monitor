@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
-import { Route, Redirect, Switch } from "react-router-dom";
+import React from 'react';
+import { Route } from "react-router-dom";
 import NavBar from "./components/navBar";
 import LoginForm from "./components/loginForm";
-import Tutorial from "./components/tutorial";
+import BindForm from "./components/bindForm";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 import './App.css';
 
 function App() {
@@ -11,9 +14,12 @@ function App() {
       <NavBar />
       <br/>
       <br/>
-      <LoginForm />
+      
       <main>
+        <Route exact path="/" component={LoginForm}></Route>
+        <Route path="/bind-server" component={BindForm}></Route>
       </main>
+      
     </React.Fragment>
   );
 }
