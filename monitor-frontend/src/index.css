@@ -9,13 +9,15 @@ a {
     text-decoration: none;
 }
 
-.container {
+.container-login {
     background-color: #fff;
     border-radius: 5px;
     border: 10px solid #dce7ff;
     width: 1000px;
     box-shadow: 0 4px 4px rgba(0,0,0,0.1);
     display: flex;
+    position: relative;     
+    margin-left: 15%;
 }
 
 form {
@@ -26,11 +28,6 @@ form {
     justify-content: center;
     padding: 40px;
     flex: 1;
-}
-
-.form-control {
-    margin: 10px 0;
-    width: 100%;
 }
 
 .checkbox-container {
@@ -107,11 +104,16 @@ form {
 }
 
 @media(max-width: 768px) {
-    .container {
+    .container-login {
         flex-direction: column;
     }
 
     form {
         border-right: 0;
     }
+}
+
+#bind-server {
+    position: fixed;
+    right: 1%;
 }
