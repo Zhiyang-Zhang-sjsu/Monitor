@@ -1,4 +1,5 @@
 import React from 'react';
+import BindServer from './common/bindServer';
 import {NavLink} from 'react-router-dom';
 
 const NavBar = () => {
@@ -11,13 +12,19 @@ const NavBar = () => {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/tutorial">Tutorial</NavLink>
+                  <NavLink className="nav-link" to="/"></NavLink> 
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/tutorial">Tutorial</NavLink> 
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/documentation">Documentation</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/support">Support</NavLink>
+                </li>
+                <li className="nav-item" id="bind-server">
+                  <NavLink className="nav-link" to="/bind-server"><BindServer /></NavLink>
                 </li>
               </ul>
             </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from './common/form';
 import Joi from 'joi-browser';
+import { PersonFill } from 'react-bootstrap-icons';
 
 class LoginForm extends Form {
     state = {
@@ -23,7 +24,7 @@ class LoginForm extends Form {
 
     render() { 
       return (
-        <div className="container">
+        <div className="container-login">
           <form onSubmit={this.handleSubmit}>
             
             <h1>Monitor</h1>
@@ -37,16 +38,16 @@ class LoginForm extends Form {
                 </select>
               </div>
             </div>
-            
-            {this.renderInput('form-row', 'username', 'Username', 'Username or E-mail')}
-            {this.renderInput('form-row', 'password', 'Password', 'Password', 'password')}
+            <br/>
+            {this.renderInput('form-row', 'username', 'Username', 'Username or E-mail')}<br/>
+            {this.renderInput('form-row', 'password', 'Password', 'Password', 'password')}<br/>
 
             <div className="checkbox-container">
               <input type="checkbox" id="remember"/>
               <label for="remember">Remember me</label>
             </div>
 
-            {this.renderButton("Login", 'btn btn-secondary')}
+            {this.renderButton("Login", 'btn btn-info')}
           </form>
       
           <div className="features">
